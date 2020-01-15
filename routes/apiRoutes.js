@@ -16,7 +16,9 @@ module.exports = function(app) {
 
     // POSTS
     app.post("/api/notes", function(req, res) {
-        console.log(res.json(db));
+        db.push(req.body);
+        console.log(res.json(db))
+
     });
 
 }
