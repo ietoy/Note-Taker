@@ -1,22 +1,25 @@
 // =================================================
 // DEPENDENCIES
 // =================================================
-var express = require("express");
-var app = express();
-var PORT = process.env.PORT || 8080;
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 8080;
+const path = require("path");
+
+var notes;
 
 // =================================================
 // SET UP DATA PARSING
 // =================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static("public"));
 
 // =================================================
 // ROUTER
 // =================================================
-require("./routes/htmlRoutes")(app);
 require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // =================================================
 // LISTENER

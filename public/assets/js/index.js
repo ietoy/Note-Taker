@@ -1,3 +1,5 @@
+// console.log("Index.js is working.");
+
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
